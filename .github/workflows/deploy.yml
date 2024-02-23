@@ -35,7 +35,7 @@ jobs:
 
       - name: Copy files
         run: |
-          scp target/SpringBootRESTDemo*.jar ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER }}:/opt/SpringBootRESTDemo
+          scp -o StrictHostKeyChecking=no target/SpringBootRESTDemo*.jar ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER }}:/opt/SpringBootRESTDemo
 
       - name: Restart Application
         run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER }} 'bash -s' < ./scripts/restart_server.sh
