@@ -48,6 +48,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER }} "rm -f /opt/SpringBootRESTDemo/*.jar"
           scp -o StrictHostKeyChecking=no ./SpringBootRESTDemo*.jar ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER }}:/opt/SpringBootRESTDemo
+          scp -o StrictHostKeyChecking=no ./restart_server.sh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER }}:/opt/SpringBootRESTDemo
 
       - name: Restart Application
         run: ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_SERVER }} 'bash -s' < ./scripts/restart_server.sh
