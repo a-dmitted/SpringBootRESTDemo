@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export JAVA_HOME=/usr/java/jdk-21.0.2+13
+export PATH=$PATH:$JAVA_HOME/bin
+
 # Define variables
 APP_NAME="SpringBootRESTDemo"
 JAR_NAME="SpringBootRESTDemo*.jar"
