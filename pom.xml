@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>SpringBootRESTDemo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>24.2.001-SNAPSHOT</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -42,6 +42,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
 
 </project>
