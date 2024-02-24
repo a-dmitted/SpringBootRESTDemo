@@ -24,8 +24,10 @@ jobs:
       - name: Upload JAR file as an artifact
         uses: actions/upload-artifact@v2
         with:
-          name: springboot-app-jar
-          path: target/SpringBootRESTDemo*.jar
+          name: springboot-app-files
+          path: |
+            target/SpringBootRESTDemo*.jar
+            scripts/restart_server.sh
 
   deploy:
     needs: build
@@ -37,7 +39,7 @@ jobs:
       - name: Download JAR file artifact
         uses: actions/download-artifact@v2
         with:
-          name: springboot-app-jar
+          name: springboot-app-files
 
       - name: Install SSH key
         uses: webfactory/ssh-agent@v0.5.3
